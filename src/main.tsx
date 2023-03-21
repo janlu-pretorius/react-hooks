@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
+import { virtualizedData } from "./mocks/mockData";
 import { Root } from "./Root";
 import { UseContext } from "./useContext";
 import { UseDebugValue } from "./useDebugValue";
@@ -14,6 +15,8 @@ import { UseMemo } from "./useMemo";
 import { UseReducer } from "./useReducer";
 import { UseSyncExternalStore } from "./useSyncExternalStore";
 import { UseTransition } from "./useTransition";
+import { VirtualizedList } from "./virtualized_list/virtualList";
+import { VirtualizedListLibrary } from "./virtualized_list/virualListLib";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +62,14 @@ const router = createBrowserRouter([
       {
         path: "use-debug-value",
         element: <UseDebugValue />,
+      },
+      {
+        path: "virtualized-list",
+        element: <VirtualizedList items={virtualizedData} />,
+      },
+      {
+        path: "virtualized-list-library",
+        element: <VirtualizedListLibrary items={virtualizedData} />,
       },
     ],
   },
